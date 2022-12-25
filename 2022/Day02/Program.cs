@@ -9,8 +9,6 @@ internal class Program
         if (part == "B") { PartB.Run(); }
     }
 
-
-
     // Read file containing the prompt -> split by newlines
     public static string[] ReadPrompt()
     {
