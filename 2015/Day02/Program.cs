@@ -4,7 +4,7 @@ public static class Program
 {
   static void Main()
   {
-    string part = "A";
+    string part = "B";
     if (part == "A") { PartA.Run(); }
     if (part == "B") { PartB.Run(); }
   }
