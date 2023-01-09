@@ -12,12 +12,7 @@ internal static class PartA
 
     foreach (char character in prompt)
     {
-
-      if (character.Equals('(')) { floor++; continue; }
-      if (character.Equals(')')) { floor--; continue; }
-
-      // Reaching here implies unexpected input
-      throw new InvalidDataException();
+      floor = Program.FindNextFloor(floor, character);
     }
 
     // Print final floor
