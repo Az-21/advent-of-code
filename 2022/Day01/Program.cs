@@ -13,9 +13,9 @@ string[] contributions = prompt.Split(new string[] { separator + separator }, St
 List<int> individualContributions = new();
 foreach (string contribution in contributions)
 {
-    string[] ledger = contribution.Split(separator, StringSplitOptions.TrimEntries);
-    int[] parsedLedger = Array.ConvertAll(ledger, x => int.Parse(x));
-    individualContributions.Add(parsedLedger.Sum());
+  string[] ledger = contribution.Split(separator, StringSplitOptions.TrimEntries);
+  int[] parsedLedger = Array.ConvertAll(ledger, x => int.Parse(x));
+  individualContributions.Add(parsedLedger.Sum());
 }
 
 // Sort individual contributions in descending order
