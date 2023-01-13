@@ -7,10 +7,10 @@ internal static class PartB
     // Read prompt
     string[] prompt = Program.ReadPrompt();
 
-    // Initialize a matrix with all lights set to OFF
+    // Initialize a matrix with all lights set to 0
     const int xLights = 1000;
     const int yLights = 1000;
-    int[,] lightMatrix = new int[xLights, yLights]; // OFF by default
+    int[,] lightMatrix = new int[xLights, yLights]; // 0 by default
 
     // Iterate over all instruction and apply them to the light matrix
     foreach (string line in prompt)
@@ -37,18 +37,18 @@ internal static class PartB
       }
     }
 
-    // Count number of lights lit after all instructions are applied
-    int totalLightIntensity = 0;
+    // Add light intensity after all actions are applied
+    int totalIntensity = 0;
     for (int y = 0; y < yLights; y++)
     {
       for (int x = 0; x < xLights; x++)
       {
-        totalLightIntensity += lightMatrix[y, x];
+        totalIntensity += lightMatrix[y, x];
       }
     }
 
-    // Print number of ON lights
-    Console.WriteLine(totalLightIntensity);
+    // Print sum of all light intensities
+    Console.WriteLine(totalIntensity);
   }
 
   // Apply action
