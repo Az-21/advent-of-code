@@ -57,19 +57,12 @@ public static class Program
 // Valid switching actions
 public enum SwitchAction { Toggle, TurnOn, TurnOff }
 
-// Class to hold meaningful data from instructions
-public class Instruction
+// Immutable record to hold meaningful data from instructions
+public readonly record struct Instruction
 {
-  public SwitchAction Action { get; }
-  public int[] TopLeftCoordinate { get; }
-  public int[] BottomRightCoordinate { get; }
-
-  public Instruction(SwitchAction action, int[] topLeftCoordinate, int[] bottomRightCoordinate)
-  {
-    Action = action;
-    TopLeftCoordinate = topLeftCoordinate;
-    BottomRightCoordinate = bottomRightCoordinate;
-  }
+  public SwitchAction Action { get; init; }
+  public int[] TopLeftCoordinate { get; init; }
+  public int[] BottomRightCoordinate { get; init; }
 
   public Instruction(SwitchAction action, string topLeftCoordinate, string bottomRightCoordinate)
   {
